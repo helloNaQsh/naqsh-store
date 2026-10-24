@@ -3,16 +3,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#fbf8f2">
-<meta name="description" content="NAQSH — Elegance in Every Detail. Discover watches, shoes, perfumes, bracelets and hoodies in Pakistan.">
+<meta name="description" content="NAQSH — Elegance in Every Detail. Shop watches, shoes, perfumes, bracelets and hoodies in Pakistan.">
 <title>NAQSH | A Signature of Style</title>
 
 <style>
 :root{
- --bg:#fbf8f2;--panel:#fffdf9;--ink:#171512;
- --gold:#b88735;--gold-light:#e5cc97;--muted:#71695d;
- --border:#e8dfd0;--dark:#171612;
+ --bg:#fbf8f2;--white:#fffdf9;--ink:#171512;
+ --gold:#b88735;--gold2:#d8b66f;--muted:#756d61;
+ --border:#e7ddcd;--dark:#171612;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
@@ -21,144 +21,176 @@ button,input,select,textarea{font:inherit}
 button,a{-webkit-tap-highlight-color:transparent}
 button{cursor:pointer}
 a{color:inherit;text-decoration:none}
-img{display:block;width:100%}
+img{display:block;max-width:100%}
 .container{width:min(1200px,92%);margin:auto}
-.gold{color:var(--gold)}
-.eyebrow{font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:bold}
 h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:normal}
 h2{font-size:clamp(29px,4vw,43px);line-height:1.2}
-.announcement{height:32px;overflow:hidden;background:#151411;color:#fffaf0;display:flex;align-items:center}
-.announcement-track{display:flex;align-items:center;gap:55px;white-space:nowrap;min-width:max-content;animation:ticker 32s linear infinite;font-size:10px;letter-spacing:1px;font-weight:bold}
-.announcement-track span{display:inline-block}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-header{position:sticky;top:0;z-index:20;background:rgba(251,248,242,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-.nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-.brand{width:125px;flex-shrink:0}
-.brand img{width:100%;height:72px;object-fit:contain}
-.navlinks{display:flex;gap:24px;font-size:13px}
+.eyebrow{font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:bold}
+
+/* RUNNING OFFERS */
+.announcement{height:32px;background:var(--dark);color:white;overflow:hidden;display:flex;align-items:center}
+.ticker{display:flex;gap:45px;width:max-content;white-space:nowrap;animation:move 32s linear infinite;font-size:10px;letter-spacing:1px;font-weight:bold}
+.ticker span{padding-right:10px}
+@keyframes move{to{transform:translateX(-50%)}}
+
+/* HEADER AND LOGO */
+header{position:sticky;top:0;z-index:20;background:#fbf8f2f5;backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav{min-height:82px;display:flex;align-items:center;gap:25px}
+.brand{display:flex;align-items:center;justify-content:flex-start;width:125px;flex-shrink:0;margin-right:auto}
+.brand img{width:100%;height:74px;object-fit:contain;object-position:left center}
+.brand-fallback{font-family:Georgia,serif;font-size:25px;letter-spacing:2px;color:var(--ink);line-height:1.1}
+.brand-fallback small{display:block;font:10px Arial;text-align:center;letter-spacing:3px}
+.navlinks{display:flex;gap:23px;font-size:13px}
 .navlinks a:hover{color:var(--gold)}
-.navright{display:flex;gap:9px;align-items:center}
-.iconbtn{border:1px solid #d8c7a6;background:transparent;color:var(--ink);padding:10px 13px;border-radius:3px}
-.goldbtn{display:inline-flex;justify-content:center;align-items:center;gap:8px;background:var(--gold);color:#fffdf9;border:1px solid var(--gold);padding:12px 19px;border-radius:3px;font-size:13px;font-weight:bold;transition:.2s}
-.goldbtn:hover{background:#956a27;transform:translateY(-2px)}
-.outlinebtn{display:inline-flex;justify-content:center;align-items:center;background:transparent;color:var(--ink);border:1px solid var(--gold);padding:12px 19px;border-radius:3px;font-size:13px}
-.hero{min-height:500px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(251,248,242,.98) 0%,rgba(251,248,242,.9) 35%,rgba(251,248,242,.08) 100%),url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1800&q=85') center 45%/cover}
+.navright{display:flex;gap:8px;align-items:center}
+.iconbtn{border:1px solid var(--border);background:transparent;color:var(--ink);padding:10px 13px;border-radius:3px}
+.goldbtn,.outlinebtn{display:inline-flex;justify-content:center;align-items:center;gap:7px;padding:12px 17px;border-radius:3px;font-size:12px;font-weight:bold;transition:.2s}
+.goldbtn{background:var(--gold);color:white;border:1px solid var(--gold)}
+.goldbtn:hover{background:#916522;transform:translateY(-1px)}
+.outlinebtn{background:transparent;color:var(--ink);border:1px solid var(--gold)}
+.full{width:100%;margin-top:10px}
+
+/* HERO */
+.hero{min-height:490px;display:flex;align-items:center;background:linear-gradient(90deg,#fbf8f2 0%,#fbf8f2ed 36%,#fbf8f222 100%),url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1800&q=85') center/cover}
 .hero-content{padding:65px 0;max-width:590px}
-h1{font-size:clamp(44px,6.5vw,76px);line-height:1.04;margin:20px 0}
+h1{font-size:clamp(44px,6.4vw,76px);line-height:1.04;margin:20px 0}
 h1 em{font-weight:normal;color:var(--gold)}
-.hero p{max-width:430px;color:#514b42;font-size:15px;margin-bottom:25px}
-.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero p{max-width:440px;font-size:14px;color:#514b42;margin-bottom:24px}
+.actions{display:flex;gap:11px;flex-wrap:wrap}
 .benefits{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--border)}
-.benefit{text-align:center;padding:20px 10px;border-right:1px solid var(--border)}
+.benefit{text-align:center;padding:18px 8px;border-right:1px solid var(--border)}
 .benefit:last-child{border:0}
-.benefit strong{display:block;font-size:11px;letter-spacing:.8px}
+.benefit strong{display:block;font-size:11px;letter-spacing:.5px}
 .benefit span{font-size:11px;color:var(--muted)}
-.section{padding:68px 0}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:26px}
-.sub{color:var(--muted);font-size:13px;margin-top:6px}
+
+/* COLLECTIONS AND PRODUCTS */
+.section{padding:65px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:25px}
+.sub{color:var(--muted);font-size:13px;margin-top:5px}
 .categories{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.cat{overflow:hidden;background:var(--panel);border:1px solid var(--border)}
-.cat img{height:190px;object-fit:cover;transition:transform .4s}
+.cat{overflow:hidden;border:1px solid var(--border);background:var(--white);text-align:center}
+.cat img{height:185px;width:100%;object-fit:cover;transition:transform .35s}
 .cat:hover img{transform:scale(1.05)}
-.cat-label{text-align:center;padding:11px 5px}
-.cat-label strong{font-family:Georgia,serif;font-size:17px;font-weight:normal}
-.cat-label span{display:block;font-size:11px;color:var(--muted)}
+.cat-label{padding:10px 4px}
+.cat-label strong{font:normal 17px Georgia,serif}
+.cat-label span{display:block;font-size:10px;color:var(--muted)}
 .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
-.search{flex:1;min-width:180px}
-.search input,.toolbar select,.field input,.field textarea{
-width:100%;background:#fffdf9;color:var(--ink);border:1px solid #ded2bd;padding:12px;border-radius:3px;outline:none
+.search{flex:1;min-width:170px}
+.search input,.toolbar select,.field input,.field textarea,.field select{
+ width:100%;background:var(--white);color:var(--ink);border:1px solid #ded3c1;padding:12px;border-radius:3px;outline:none
 }
-.search input:focus,.field input:focus,.field textarea:focus{border-color:var(--gold)}
+.search input:focus,.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold)}
 .toolbar select{width:auto;min-width:135px}
 .products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
-.product{min-width:0;background:var(--panel);border:1px solid var(--border);overflow:hidden;transition:transform .25s,box-shadow .25s}
-.product:hover{transform:translateY(-4px);box-shadow:0 10px 24px #3b2b100c}
-.product-img{position:relative;overflow:hidden;background:#eee4d5}
-.product-img img{height:250px;object-fit:cover;transition:transform .4s}
+.product{min-width:0;background:var(--white);border:1px solid var(--border);overflow:hidden;transition:.25s}
+.product:hover{transform:translateY(-3px);box-shadow:0 8px 24px #0000000b}
+.product-img{position:relative;background:#eee5d7;overflow:hidden}
+.product-img img{width:100%;height:245px;object-fit:cover;transition:transform .4s}
 .product:hover .product-img img{transform:scale(1.04)}
-.tag{position:absolute;top:10px;left:10px;background:var(--gold);color:white;padding:4px 8px;font-size:9px;letter-spacing:.8px}
-.product-info{padding:14px}
-.product-category{font-size:10px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase}
-.product h3{font-size:17px;margin:5px 0}
-.price{color:#221d15;font-size:16px;font-weight:bold}
-.oldprice{font-size:11px;color:#8b8478;text-decoration:line-through;margin-left:6px;font-weight:normal}
-.addbtn{width:100%;margin-top:12px;padding:10px;background:transparent;border:1px solid #d8c7a6;color:var(--ink);border-radius:3px;font-size:12px}
-.addbtn:hover{background:var(--gold);color:white}
-.empty{grid-column:1/-1;text-align:center;padding:35px;color:var(--muted)}
-.promo{background:linear-gradient(110deg,#151411,#302719);color:#fffaf0;display:grid;grid-template-columns:1fr auto;align-items:center;gap:25px;padding:42px;border:1px solid var(--gold)}
+.tag{position:absolute;top:9px;left:9px;background:var(--gold);color:white;padding:4px 7px;font-size:9px;letter-spacing:.5px}
+.product-info{padding:13px}
+.product-category{font-size:10px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase}
+.product h3{font-size:16px;margin:5px 0}
+.price{font-size:15px;font-weight:bold}
+.oldprice{font-size:11px;font-weight:normal;color:#8d8579;text-decoration:line-through;margin-left:5px}
+.product-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}
+.product-actions button{font-size:11px;padding:10px 3px;border-radius:3px}
+.buybtn{background:var(--gold);border:1px solid var(--gold);color:white}
+.addbtn{background:transparent;border:1px solid var(--border);color:var(--ink)}
+.buybtn:hover{background:#916522}
+.addbtn:hover{border-color:var(--gold)}
+.empty{grid-column:1/-1;text-align:center;padding:30px;color:var(--muted)}
+
+/* PROMOTION AND FOOTER */
+.promo{background:linear-gradient(110deg,#171612,#342a1b);color:white;padding:38px;border:1px solid var(--gold);display:flex;justify-content:space-between;align-items:center;gap:25px}
 .promo h2{margin:9px 0}
-.promo p{font-size:13px;color:#e5dccd;margin-top:9px}
-.promo-points{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;font-size:11px;color:#ead8b5}
-footer{background:#fffdf9;border-top:1px solid var(--border);padding:42px 0 24px;color:var(--muted)}
-.footergrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:25px}
-footer h3{font-family:Arial,sans-serif;color:#8c6424;font-size:12px;font-weight:bold;margin-bottom:12px}
-footer p,footer a{font-size:12px;display:block;margin:7px 0}
+.promo p{font-size:13px;color:#e5dccd}
+.promo-points{display:flex;flex-wrap:wrap;gap:15px;margin-top:16px;color:#ead8b5;font-size:11px}
+footer{background:var(--white);border-top:1px solid var(--border);padding:40px 0 22px;color:var(--muted)}
+.footergrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:24px}
+.footer-logo{width:115px;height:85px;object-fit:contain;object-position:left center}
+footer h3{font: bold 12px Arial;color:#916522;margin-bottom:12px}
+footer p,footer a{display:block;font-size:12px;margin:7px 0}
 footer a:hover{color:var(--gold)}
-.footer-brand{width:115px;margin-bottom:12px}
-.copyright{border-top:1px solid var(--border);margin-top:25px;padding-top:16px;font-size:11px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.whatsapp-float{position:fixed;bottom:20px;right:18px;z-index:30;background:#20c765;color:#071c0d;border-radius:50px;padding:12px 17px;font-size:12px;font-weight:bold;box-shadow:0 5px 25px #0002}
+.copyright{border-top:1px solid var(--border);padding-top:16px;margin-top:24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px}
+
+/* CART */
+.whatsapp-float{position:fixed;right:17px;bottom:18px;z-index:30;background:#20c765;color:#071c0d;border-radius:40px;padding:12px 16px;font-size:12px;font-weight:bold;box-shadow:0 5px 22px #0002}
 .overlay{position:fixed;inset:0;background:#0008;z-index:40;opacity:0;pointer-events:none;transition:.25s}
 .overlay.open{opacity:1;pointer-events:auto}
-.drawer{position:absolute;right:0;top:0;height:100%;width:min(440px,100%);background:var(--bg);padding:23px;overflow-y:auto;transform:translateX(100%);transition:.3s}
+.drawer{position:absolute;right:0;top:0;height:100%;width:min(440px,100%);background:var(--bg);padding:22px;overflow-y:auto;transform:translateX(100%);transition:.3s}
 .overlay.open .drawer{transform:translateX(0)}
-.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:15px;margin-bottom:18px}
-.close{background:transparent;color:var(--ink);border:1px solid #d8c7a6;padding:7px 12px;border-radius:3px}
-.cartitem{display:grid;grid-template-columns:70px 1fr auto;gap:12px;padding:13px 0;border-bottom:1px solid var(--border)}
-.cartitem img{height:78px;object-fit:cover}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:15px;margin-bottom:15px}
+.close{background:transparent;border:1px solid var(--border);padding:7px 11px;border-radius:3px}
+.cartitem{display:grid;grid-template-columns:65px 1fr auto;gap:10px;padding:13px 0;border-bottom:1px solid var(--border)}
+.cartitem img{height:72px;object-fit:cover}
 .cartitem h4{font-size:13px;font-weight:normal}
-.cartitem p{color:var(--gold);font-size:13px}
-.qty{display:flex;align-items:center;gap:10px;margin-top:7px}
-.qty button{background:white;color:var(--ink);border:1px solid var(--border);width:25px;height:25px}
-.remove{background:none;border:0;color:#b34a36;font-size:11px}
-.cart-total{display:flex;justify-content:space-between;padding:18px 0;font-size:17px}
+.cartitem p{font-size:13px;color:var(--gold)}
+.qty{display:flex;align-items:center;gap:9px;margin-top:6px}
+.qty button{background:white;border:1px solid var(--border);width:25px;height:25px}
+.remove{background:none;border:0;color:#a74432;font-size:11px}
+.cart-total{display:flex;justify-content:space-between;padding:17px 0;font-size:16px}
 .cart-total strong{color:var(--gold)}
-.full{width:100%;margin-top:10px}
-.modal{position:fixed;inset:0;background:#0009;z-index:50;display:none;align-items:center;justify-content:center;padding:15px}
+.note{font-size:11px;color:var(--muted);margin-top:10px}
+
+/* CHECKOUT FORM */
+.modal{position:fixed;inset:0;z-index:50;background:#0009;display:none;align-items:center;justify-content:center;padding:12px}
 .modal.open{display:flex}
-.modalbox{background:var(--bg);border:1px solid var(--border);padding:24px;width:min(500px,100%);max-height:92vh;overflow-y:auto}
-.modalhead{display:flex;justify-content:space-between;gap:10px;margin-bottom:18px}
-.modalbox h2{font-size:27px}
-.field{margin:12px 0}
+.modalbox{background:var(--bg);border:1px solid var(--border);padding:23px;width:min(540px,100%);max-height:94vh;overflow-y:auto}
+.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}
+.modalbox h2{font-size:29px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.field{margin:8px 0}
 .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}
 .field textarea{min-height:75px;resize:vertical}
-.paychoice{border:1px solid var(--border);padding:12px;margin:8px 0;display:flex;gap:10px;align-items:center;font-size:13px}
+.field.fullrow{grid-column:1/-1}
+.paychoice{display:flex;align-items:center;gap:9px;padding:12px;border:1px solid var(--border);margin:8px 0;font-size:12px}
 .paychoice input{accent-color:var(--gold)}
-.note{color:var(--muted);font-size:11px;margin-top:12px}
-.toast{position:fixed;bottom:78px;left:50%;transform:translateX(-50%);background:#171512;color:white;padding:11px 18px;z-index:80;border-radius:3px;font-size:12px;display:none}
+.toast{display:none;position:fixed;z-index:80;bottom:75px;left:50%;transform:translateX(-50%);background:var(--dark);color:white;padding:11px 18px;border-radius:4px;font-size:12px;max-width:90%;text-align:center}
 .toast.show{display:block}
+
 @media(max-width:900px){
- .navlinks{gap:13px}.brand{width:105px}.products{grid-template-columns:repeat(3,minmax(0,1fr))}
- .product-img img{height:220px}.footergrid{grid-template-columns:repeat(2,1fr)}
+ .navlinks{gap:13px}.brand{width:105px}
+ .products{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .product-img img{height:220px}
+ .footergrid{grid-template-columns:repeat(2,1fr)}
 }
-@media(max-width:680px){
- .nav{min-height:68px;gap:8px}.brand{width:85px}.brand img{height:57px}
- .navlinks{display:none}.iconbtn{padding:9px 10px;font-size:12px}
- .hero{min-height:450px;background-position:62% center}
- .hero-content{padding:54px 0;max-width:95%}.hero p{max-width:340px;font-size:14px}
- .section{padding:48px 0}.categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
- .cat img{height:160px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
- .product-img img{height:190px}.product-info{padding:10px}.product h3{font-size:15px}
- .price{font-size:14px}.oldprice{font-size:10px}.addbtn{padding:9px}
- .benefit{padding:15px 5px}.benefit strong{font-size:9px;letter-spacing:0}.benefit span{font-size:10px}
- .promo{grid-template-columns:1fr;padding:26px}.footergrid{gap:18px}
- .announcement-track{gap:30px;font-size:9px}
+@media(max-width:650px){
+ .nav{min-height:67px;gap:8px}.brand{width:83px}.brand img{height:58px}
+ .navlinks{display:none}.iconbtn{padding:9px 10px;font-size:11px}
+ .hero{min-height:430px;background-position:60% center}
+ .hero-content{padding:45px 0;max-width:95%}.hero p{max-width:330px;font-size:13px}
+ .section{padding:45px 0}
+ .categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .cat img{height:150px}
+ .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .product-img img{height:185px}.product-info{padding:9px}
+ .product h3{font-size:14px}.price{font-size:13px}.oldprice{font-size:9px}
+ .product-actions{gap:5px}.product-actions button{font-size:10px;padding:10px 2px}
+ .benefit{padding:13px 4px}.benefit strong{font-size:9px;letter-spacing:0}.benefit span{font-size:10px}
+ .promo{padding:25px;flex-direction:column;align-items:flex-start}
+ .footergrid{gap:17px}
+ .announcement .ticker{gap:25px;font-size:9px}
 }
 @media(max-width:380px){
- .container{width:94%}.hero{min-height:420px}.hero h1{font-size:43px}
- .product-img img{height:160px}.cat img{height:135px}.product h3{font-size:13px}
+ .container{width:94%}.hero{min-height:400px}.hero h1{font-size:42px}
+ .product-img img{height:155px}.cat img{height:130px}
+ .product-actions{grid-template-columns:1fr}
  .benefits{grid-template-columns:1fr}.benefit{border-right:0;border-bottom:1px solid var(--border)}
- .footergrid{grid-template-columns:1fr 1fr}.footergrid>div:first-child{grid-column:1/-1}
+ .footergrid{grid-template-columns:1fr 1fr}
+ .footergrid>div:first-child{grid-column:1/-1}
+ .formgrid{grid-template-columns:1fr}.field.fullrow{grid-column:auto}
 }
 @media(prefers-reduced-motion:reduce){
- *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
+
 <body>
 
-<!-- RUNNING STORE OFFERS -->
-<div class="announcement" aria-label="Store offers">
- <div class="announcement-track">
+<div class="announcement">
+ <div class="ticker">
   <span>✦ FREE HOME DELIVERY ON SELECT ORDERS</span>
   <span>✦ CASH ON DELIVERY AVAILABLE</span>
   <span>✦ SPECIAL DISCOUNTS ON SELECTED STYLES</span>
@@ -172,9 +204,10 @@ footer a:hover{color:var(--gold)}
 
 <header>
  <div class="container nav">
-  <!-- Upload your logo to the repository as naqsh-logo.png -->
   <a href="#home" class="brand" aria-label="NAQSH Home">
-   <img src="naqsh-logo.png" alt="NAQSH | نقش logo" onerror="this.style.display='none';this.parentElement.innerHTML='<strong style=&quot;font-family:Georgia,serif;font-size:25px;letter-spacing:3px;color:#b88735&quot;>NAQSH<small style=&quot;display:block;text-align:center;font:10px Arial;letter-spacing:2px&quot;>نقش</small></strong>'">
+   <img src="naqsh-logo.png" alt="NAQSH Logo"
+    onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+   <span class="brand-fallback" style="display:none">NAQSH<small>نقش</small></span>
   </a>
   <nav class="navlinks">
    <a href="#home">Home</a>
@@ -183,7 +216,7 @@ footer a:hover{color:var(--gold)}
    <a href="#about">About</a>
   </nav>
   <div class="navright">
-   <button class="iconbtn" onclick="openCart()" aria-label="Open shopping bag">Bag (<span id="cartCount">0</span>)</button>
+   <button class="iconbtn" onclick="openCart()">Bag (<span id="cartCount">0</span>)</button>
   </div>
  </div>
 </header>
@@ -243,15 +276,19 @@ footer a:hover{color:var(--gold)}
 <section class="section" id="shop">
  <div class="container">
   <div class="section-head">
-   <div><div class="eyebrow">THE NAQSH EDIT</div><h2>Featured Products</h2><p class="sub">Find the pieces that feel like you.</p></div>
+   <div><div class="eyebrow">THE NAQSH EDIT</div><h2>Featured Products</h2><p class="sub">Discover pieces that define your style.</p></div>
   </div>
   <div class="toolbar">
    <div class="search"><input id="search" type="search" placeholder="Search products..." oninput="renderProducts()"></div>
-   <select id="categoryFilter" onchange="renderProducts()" aria-label="Filter category">
-    <option value="All">All Categories</option><option>Watches</option><option>Shoes</option><option>Perfumes</option><option>Bracelets</option><option>Hoodies</option>
+   <select id="categoryFilter" onchange="renderProducts()" aria-label="Filter products">
+    <option value="All">All Categories</option>
+    <option>Watches</option><option>Shoes</option><option>Perfumes</option><option>Bracelets</option><option>Hoodies</option>
    </select>
    <select id="sortFilter" onchange="renderProducts()" aria-label="Sort products">
-    <option value="featured">Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option><option value="name">Name A–Z</option>
+    <option value="featured">Featured</option>
+    <option value="low">Price: Low to High</option>
+    <option value="high">Price: High to Low</option>
+    <option value="name">Name A–Z</option>
    </select>
   </div>
   <div class="products" id="products"></div>
@@ -275,11 +312,11 @@ footer a:hover{color:var(--gold)}
  <div class="container">
   <div class="footergrid">
    <div>
-    <img class="footer-brand" src="naqsh-logo.png" alt="NAQSH logo" onerror="this.style.display='none'">
+    <img class="footer-logo" src="naqsh-logo.png" alt="NAQSH Logo">
     <p>Elegance in Every Detail.<br>A Signature of Style.</p>
    </div>
    <div><h3>QUICK LINKS</h3><a href="#home">Home</a><a href="#collections">Collections</a><a href="#shop">Shop All</a><a href="#about">About Us</a></div>
-   <div><h3>CUSTOMER SUPPORT</h3><a href="#" onclick="contactWhatsApp();return false">WhatsApp Us</a><a href="#shop">Shopping</a><a href="#" onclick="openCart();return false">Your Bag</a><a href="#delivery">Delivery Information</a></div>
+   <div><h3>CUSTOMER SUPPORT</h3><a href="#" onclick="contactWhatsApp();return false">WhatsApp Us</a><a href="#shop">Shopping</a><a href="#" onclick="openCart();return false">Your Bag</a></div>
    <div><h3>CONTACT US</h3><a href="#" onclick="contactWhatsApp();return false">WhatsApp: 0331 9333080</a><a href="mailto:naqshpk@gmail.com">Email: naqshpk@gmail.com</a><p>Pakistan</p></div>
   </div>
   <div class="copyright"><span>© <span id="year"></span> NAQSH | نقش. All rights reserved.</span><span>Elegance in Every Detail.</span></div>
@@ -288,32 +325,65 @@ footer a:hover{color:var(--gold)}
 
 <a class="whatsapp-float" href="#" onclick="contactWhatsApp();return false">☏ WhatsApp Us</a>
 
+<!-- SHOPPING CART -->
 <div class="overlay" id="cartOverlay" onclick="if(event.target===this)closeCart()">
  <aside class="drawer" aria-label="Shopping bag">
   <div class="drawer-head"><h2>Your Bag</h2><button class="close" onclick="closeCart()">Close ✕</button></div>
   <div id="cartItems"></div>
   <div class="cart-total"><span>Items total</span><strong id="cartTotal">Rs. 0</strong></div>
   <p class="note">Delivery charges and free-delivery eligibility will be confirmed by NAQSH.</p>
-  <button class="goldbtn full" onclick="openCheckout()">Checkout →</button>
+  <button class="goldbtn full" onclick="openCheckout()">Proceed to Checkout →</button>
   <button class="outlinebtn full" onclick="continueWhatsApp()">Order on WhatsApp</button>
  </aside>
 </div>
 
-<div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Checkout">
+<!-- CUSTOMER CHECKOUT -->
+<div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Customer checkout">
  <div class="modalbox">
-  <div class="modalhead"><div><div class="eyebrow">COMPLETE YOUR ORDER</div><h2>Checkout</h2></div><button class="close" onclick="closeCheckout()">✕</button></div>
+  <div class="modalhead">
+   <div><div class="eyebrow">YOUR NAQSH ORDER</div><h2>Delivery Details</h2></div>
+   <button class="close" onclick="closeCheckout()">✕</button>
+  </div>
   <form id="checkoutForm">
-   <div class="field"><label for="customerName">Full name *</label><input id="customerName" required maxlength="100" autocomplete="name" placeholder="Your full name"></div>
-   <div class="field"><label for="customerPhone">Phone number *</label><input id="customerPhone" required type="tel" maxlength="20" autocomplete="tel" placeholder="03XXXXXXXXX"></div>
-   <div class="field"><label for="customerAddress">Complete delivery address *</label><textarea id="customerAddress" required maxlength="500" autocomplete="street-address" placeholder="House, street, area"></textarea></div>
-   <div class="field"><label for="customerCity">City *</label><input id="customerCity" required maxlength="80" autocomplete="address-level2" placeholder="Your city"></div>
-   <div class="field"><label for="customerNotes">Order notes (optional)</label><textarea id="customerNotes" maxlength="300" placeholder="Size, colour or delivery instructions"></textarea></div>
-   <p style="margin-top:16px;font-weight:bold">Choose your order method</p>
+   <div class="formgrid">
+    <div class="field fullrow">
+     <label for="customerName">Full Name *</label>
+     <input id="customerName" name="name" required maxlength="100" autocomplete="name" placeholder="Enter your full name">
+    </div>
+    <div class="field">
+     <label for="customerPhone">Phone Number *</label>
+     <input id="customerPhone" name="phone" type="tel" required maxlength="20" autocomplete="tel" placeholder="03XXXXXXXXX">
+    </div>
+    <div class="field">
+     <label for="customerWhatsApp">WhatsApp Number *</label>
+     <input id="customerWhatsApp" name="whatsapp" type="tel" required maxlength="20" placeholder="03XXXXXXXXX">
+    </div>
+    <div class="field fullrow">
+     <label for="customerAddress">Complete Address *</label>
+     <textarea id="customerAddress" name="address" required maxlength="500" autocomplete="street-address" placeholder="House number, street, area, landmark"></textarea>
+    </div>
+    <div class="field">
+     <label for="customerCity">City *</label>
+     <input id="customerCity" name="city" required maxlength="80" autocomplete="address-level2" placeholder="Your city">
+    </div>
+    <div class="field">
+     <label for="customerPostal">Postal Code *</label>
+     <input id="customerPostal" name="postal" required maxlength="12" inputmode="numeric" autocomplete="postal-code" placeholder="e.g. 44000">
+    </div>
+    <div class="field fullrow">
+     <label for="customerNotes">Order Notes (Optional)</label>
+     <textarea id="customerNotes" name="notes" maxlength="300" placeholder="Size, colour or delivery instructions"></textarea>
+    </div>
+   </div>
+
+   <p style="margin-top:14px;font-weight:bold">Choose Ordering Method</p>
    <label class="paychoice"><input type="radio" name="method" value="Cash on Delivery" checked> Cash on Delivery — pay when delivered</label>
    <label class="paychoice"><input type="radio" name="method" value="WhatsApp Order"> Confirm order through WhatsApp</label>
-   <div class="cart-total"><span>Items total</span><strong id="checkoutTotal">Rs. 0</strong></div>
-   <button class="goldbtn full" type="submit">Send Order to NAQSH →</button>
-   <p class="note">WhatsApp will open with your order details for confirmation. Delivery charges and applicable offers will be confirmed before dispatch.</p>
+
+   <div class="cart-total"><span>Items Total</span><strong id="checkoutTotal">Rs. 0</strong></div>
+   <p class="note">Delivery charges and any eligible offers will be confirmed before dispatch.</p>
+   <button class="goldbtn full" type="submit">Confirm Order on WhatsApp →</button>
+   <p class="note">Submitting opens WhatsApp with your order details. Your browser does not save the order to a store database.</p>
   </form>
  </div>
 </div>
@@ -321,9 +391,13 @@ footer a:hover{color:var(--gold)}
 <div class="toast" id="toast" role="status"></div>
 
 <script>
-const STORE={whatsapp:"923319333080",currency:"Rs."};
+/* NAQSH SETTINGS */
+const STORE={
+ whatsapp:"923319333080",
+ currency:"Rs."
+};
 
-/* DEMO ITEMS: Replace with your real product names, prices and photos. */
+/* DEMO PRODUCTS — change to your real products and prices */
 const productsData=[
  {id:1,name:"Classic Chronograph Watch",category:"Watches",price:3499,old:4999,tag:"BEST SELLER",image:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85"},
  {id:2,name:"Modern Chronograph",category:"Watches",price:4299,old:0,tag:"NEW",image:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=700&q=85"},
@@ -336,120 +410,218 @@ const productsData=[
 ];
 
 let cart=[];
+
 const money=n=>STORE.currency+" "+Number(n).toLocaleString("en-PK");
 
 function safeText(value){
- return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ return String(value).replace(/[&<>"']/g,c=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+ }[c]));
 }
 
 function renderProducts(){
  const q=document.getElementById("search").value.trim().toLowerCase();
  const category=document.getElementById("categoryFilter").value;
  const sort=document.getElementById("sortFilter").value;
- let list=productsData.filter(p=>(category==="All"||p.category===category)&&(p.name+" "+p.category).toLowerCase().includes(q));
+ let list=productsData.filter(p=>
+  (category==="All"||p.category===category)&&
+  (p.name+" "+p.category).toLowerCase().includes(q)
+ );
  if(sort==="low")list.sort((a,b)=>a.price-b.price);
  if(sort==="high")list.sort((a,b)=>b.price-a.price);
  if(sort==="name")list.sort((a,b)=>a.name.localeCompare(b.name));
+
  const root=document.getElementById("products");
- if(!list.length){root.innerHTML='<p class="empty">No products found. Try another search.</p>';return}
+ if(!list.length){
+  root.innerHTML='<p class="empty">No products found. Try another search.</p>';
+  return;
+ }
+
  root.innerHTML=list.map(p=>`
   <article class="product">
-   <div class="product-img"><img loading="lazy" src="${p.image}" alt="${safeText(p.name)}" onerror="this.style.display='none'">
+   <div class="product-img">
+    <img loading="lazy" src="${p.image}" alt="${safeText(p.name)}" onerror="this.style.display='none'">
     ${p.tag?`<span class="tag">${safeText(p.tag)}</span>`:""}
    </div>
-   <div class="product-info"><div class="product-category">${safeText(p.category)}</div>
-    <h3>${safeText(p.name)}</h3><div class="price">${money(p.price)} ${p.old?`<span class="oldprice">${money(p.old)}</span>`:""}</div>
-    <button class="addbtn" onclick="addToCart(${p.id})">＋ Add to Bag</button>
+   <div class="product-info">
+    <div class="product-category">${safeText(p.category)}</div>
+    <h3>${safeText(p.name)}</h3>
+    <div class="price">${money(p.price)} ${p.old?`<span class="oldprice">${money(p.old)}</span>`:""}</div>
+    <div class="product-actions">
+     <button class="buybtn" onclick="buyNow(${p.id})">Buy Now</button>
+     <button class="addbtn" onclick="addToCart(${p.id})">＋ Add to Bag</button>
+    </div>
    </div>
-  </article>`).join("");
+  </article>
+ `).join("");
 }
 
 function setCategory(category){
  document.getElementById("categoryFilter").value=category;
  renderProducts();
 }
+
 function addToCart(id){
- const p=productsData.find(x=>x.id===id);if(!p)return;
+ const p=productsData.find(x=>x.id===id);
+ if(!p)return;
  const item=cart.find(x=>x.id===id);
- if(item)item.qty++;else cart.push({...p,qty:1});
- renderCart();toast(p.name+" added to your bag");
+ if(item)item.qty++;
+ else cart.push({...p,qty:1});
+ renderCart();
+ toast(p.name+" added to your bag");
 }
+
+/* BUY NOW: checkout immediately for the selected product */
+function buyNow(id){
+ const p=productsData.find(x=>x.id===id);
+ if(!p)return;
+ cart=[{...p,qty:1}];
+ renderCart();
+ openCheckout();
+}
+
 function changeQty(id,delta){
- const item=cart.find(x=>x.id===id);if(!item)return;
- item.qty+=delta;if(item.qty<=0)cart=cart.filter(x=>x.id!==id);
+ const item=cart.find(x=>x.id===id);
+ if(!item)return;
+ item.qty+=delta;
+ if(item.qty<=0)cart=cart.filter(x=>x.id!==id);
  renderCart();
 }
-function removeItem(id){cart=cart.filter(x=>x.id!==id);renderCart()}
-function total(){return cart.reduce((sum,p)=>sum+p.price*p.qty,0)}
+
+function removeItem(id){
+ cart=cart.filter(x=>x.id!==id);
+ renderCart();
+}
+
+function total(){
+ return cart.reduce((sum,p)=>sum+p.price*p.qty,0);
+}
+
 function renderCart(){
  document.getElementById("cartCount").textContent=cart.reduce((s,p)=>s+p.qty,0);
  document.getElementById("cartTotal").textContent=money(total());
  document.getElementById("checkoutTotal").textContent=money(total());
+
  const root=document.getElementById("cartItems");
- if(!cart.length){root.innerHTML='<p class="empty">Your bag is empty.<br>Explore our collection to find your style.</p>';return}
+ if(!cart.length){
+  root.innerHTML='<p class="empty">Your bag is empty.<br>Explore our collection to find your style.</p>';
+  return;
+ }
+
  root.innerHTML=cart.map(p=>`
-  <div class="cartitem"><img src="${p.image}" alt="${safeText(p.name)}">
-   <div><h4>${safeText(p.name)}</h4><p>${money(p.price)}</p>
-    <div class="qty"><button onclick="changeQty(${p.id},-1)" aria-label="Decrease quantity">−</button><span>${p.qty}</span><button onclick="changeQty(${p.id},1)" aria-label="Increase quantity">+</button></div>
-   </div><button class="remove" onclick="removeItem(${p.id})">Remove</button>
-  </div>`).join("");
+  <div class="cartitem">
+   <img src="${p.image}" alt="${safeText(p.name)}">
+   <div>
+    <h4>${safeText(p.name)}</h4><p>${money(p.price)}</p>
+    <div class="qty">
+     <button onclick="changeQty(${p.id},-1)" aria-label="Decrease quantity">−</button>
+     <span>${p.qty}</span>
+     <button onclick="changeQty(${p.id},1)" aria-label="Increase quantity">+</button>
+    </div>
+   </div>
+   <button class="remove" onclick="removeItem(${p.id})">Remove</button>
+  </div>
+ `).join("");
 }
-function openCart(){document.getElementById("cartOverlay").classList.add("open");document.body.style.overflow="hidden"}
-function closeCart(){document.getElementById("cartOverlay").classList.remove("open");document.body.style.overflow=""}
+
+function openCart(){
+ document.getElementById("cartOverlay").classList.add("open");
+ document.body.style.overflow="hidden";
+}
+function closeCart(){
+ document.getElementById("cartOverlay").classList.remove("open");
+ document.body.style.overflow="";
+}
 function openCheckout(){
  if(!cart.length){toast("Please add a product first");return}
- closeCart();document.getElementById("checkoutModal").classList.add("open");document.body.style.overflow="hidden";
+ closeCart();
+ document.getElementById("checkoutModal").classList.add("open");
+ document.body.style.overflow="hidden";
 }
-function closeCheckout(){document.getElementById("checkoutModal").classList.remove("open");document.body.style.overflow=""}
+function closeCheckout(){
+ document.getElementById("checkoutModal").classList.remove("open");
+ document.body.style.overflow="";
+}
 
-function buildOrderMessage(customer){
+function buildOrderMessage(c){
  const lines=cart.map(p=>`${p.name} x ${p.qty} = ${money(p.price*p.qty)}`);
  return [
-  "🛍️ *NEW NAQSH ORDER*","",
-  "*Customer:* "+customer.name,
-  "*Phone:* "+customer.phone,
-  "*Address:* "+customer.address,
-  "*City:* "+customer.city,"",
-  "*Products:*",...lines,"",
-  "*Items total:* "+money(total()),
-  "*Delivery:* To be confirmed",
-  "*Order method:* "+customer.method,
-  customer.notes?"*Notes:* "+customer.notes:"",
-  "Please confirm availability, delivery fee and any eligible offer."
+  "🛍️ *NEW NAQSH ORDER*",
+  "",
+  "*Customer Name:* "+c.name,
+  "*Phone Number:* "+c.phone,
+  "*Customer WhatsApp:* "+c.whatsapp,
+  "*Delivery Address:* "+c.address,
+  "*City:* "+c.city,
+  "*Postal Code:* "+c.postal,
+  "",
+  "*Products:*",
+  ...lines,
+  "",
+  "*Items Total:* "+money(total()),
+  "*Delivery Fee:* To be confirmed",
+  "*Payment / Order Method:* "+c.method,
+  c.notes?"*Order Notes:* "+c.notes:"",
+  "",
+  "Please confirm product availability, delivery charges and order details."
  ].filter(Boolean).join("\n");
 }
+
 function openWhatsApp(message){
  const url="https://wa.me/"+STORE.whatsapp+"?text="+encodeURIComponent(message);
- window.open(url,"_blank","noopener,noreferrer");
+ const tab=window.open(url,"_blank");
+ if(!tab)window.location.href=url;
 }
+
 function continueWhatsApp(){
  if(!cart.length){toast("Please add a product first");return}
- const msg="Hello NAQSH! I want to order:\n\n"+cart.map(p=>`${p.name} x ${p.qty} — ${money(p.price*p.qty)}`).join("\n")+"\n\nItems total: "+money(total())+"\nPlease confirm availability and delivery charges.";
- openWhatsApp(msg);
+ const message="Hello NAQSH! I want to order:\n\n"+
+ cart.map(p=>`${p.name} x ${p.qty} — ${money(p.price*p.qty)}`).join("\n")+
+ "\n\nItems total: "+money(total())+
+ "\nPlease confirm availability and delivery charges.";
+ openWhatsApp(message);
 }
-function contactWhatsApp(){openWhatsApp("Hello NAQSH! I would like to know more about your collection.")}
+
+function contactWhatsApp(){
+ openWhatsApp("Hello NAQSH! I would like to know more about your collection.");
+}
 
 document.getElementById("checkoutForm").addEventListener("submit",function(e){
- e.preventDefault();if(!cart.length){toast("Your bag is empty");return}
- const customer={
+ e.preventDefault();
+ if(!cart.length){toast("Your bag is empty");return}
+
+ const c={
   name:document.getElementById("customerName").value.trim(),
   phone:document.getElementById("customerPhone").value.trim(),
+  whatsapp:document.getElementById("customerWhatsApp").value.trim(),
   address:document.getElementById("customerAddress").value.trim(),
   city:document.getElementById("customerCity").value.trim(),
+  postal:document.getElementById("customerPostal").value.trim(),
   notes:document.getElementById("customerNotes").value.trim(),
   method:document.querySelector('input[name="method"]:checked').value
  };
- if(!customer.name||!customer.phone||!customer.address||!customer.city){toast("Please complete all required fields");return}
- openWhatsApp(buildOrderMessage(customer));
+
+ if(!c.name||!c.phone||!c.whatsapp||!c.address||!c.city||!c.postal){
+  toast("Please complete all required fields");
+  return;
+ }
+
+ openWhatsApp(buildOrderMessage(c));
 });
 
 function toast(message){
- const el=document.getElementById("toast");el.textContent=message;el.classList.add("show");
- setTimeout(()=>el.classList.remove("show"),2400);
+ const el=document.getElementById("toast");
+ el.textContent=message;
+ el.classList.add("show");
+ setTimeout(()=>el.classList.remove("show"),2600);
 }
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeCart();closeCheckout()}});
+
+document.addEventListener("keydown",e=>{
+ if(e.key==="Escape"){closeCart();closeCheckout()}
+});
 document.getElementById("year").textContent=new Date().getFullYear();
-renderProducts();renderCart();
+renderProducts();
+renderCart();
 </script>
 </body>
 </html>
